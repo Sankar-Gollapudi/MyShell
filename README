@@ -1,0 +1,13 @@
+Sankar Gollapudi
+
+
+I considered it very important to stress test the shell, this means both running nested shells within the mysh, piping, rigorous output/input redirection, being able to run ssh (which was very cool) and other intensive commands from within our shell. We tested our batch mode by using return separated lines of commands that worked as expected just as interactive mode would. An example is the following
+
+ls|cat
+then echo 1
+ls
+then echo 2
+
+this prints the file directory in a vertical list (due to the output of ls being passed into cat), skips echo 1
+because the last command was a pipe (and those are forbidden).
+Executes ls again and then echos 2 because the command suceeded.
